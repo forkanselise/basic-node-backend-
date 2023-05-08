@@ -28,6 +28,10 @@ const productSchema = mongoose.Schema({
     Description: {
         type: String,
         // required: true
+    },
+    Thumbnail: { //image base64
+        type: String,
+        // required: true
     }
 });
 
@@ -49,6 +53,7 @@ app.post('/videos',(req,res)=>{
         Title: req.body.Title,
         VideoUrl: req.body.VideoUrl,
         Description: req.body.Description,
+        Thumbnail: req.body.Thumbnail
     })
     newData.save()
     .then(createdData => {
